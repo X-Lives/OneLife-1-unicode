@@ -101,8 +101,8 @@ EditorScenePage::EditorScenePage()
 		  
 		  // mUndoButton( smallFont, -877, 340, "Undo" ),
 		  // mRedoButton( smallFont, -817, 340, "Redo" ),
-		  mUndoButton( smallFont, -(int)( viewWidth/2 * 0.75 ) - 55, (int)( viewWidth*viewHeightFraction * 0.32 ), "Undo" ),
-		  mRedoButton( smallFont, mUndoButton.getPosition().x + 60, mUndoButton.getPosition().y, "Redo" ),
+		  mUndoButton( smallFont, -(int)( viewWidth/2 * 0.75 ) - 55, (int)( viewWidth*viewHeightFraction * 0.32 ), translate( "undoButton" ) ),
+		  mRedoButton( smallFont, mUndoButton.getPosition().x + 60, mUndoButton.getPosition().y, translate(  "redoButton" ) ),
 		  
 		  
 		  
@@ -118,28 +118,28 @@ EditorScenePage::EditorScenePage()
 		  
 		  
           // mDeleteButton( smallFont, 820, 220, "Delete file" ),
-		  mDeleteButton( smallFont, (int)( viewWidth/2 * 0.75 ), mUndoButton.getPosition().y - 70, "Delete file" ),
-		  mConfirmDeleteButton( smallFont, mDeleteButton.getPosition().x, mDeleteButton.getPosition().y, "Confirm ?" ),
+		  mDeleteButton( smallFont, (int)( viewWidth/2 * 0.75 ), mUndoButton.getPosition().y - 70, translate( "deleteButton" ) ),
+		  mConfirmDeleteButton( smallFont, mDeleteButton.getPosition().x, mDeleteButton.getPosition().y, translate(  "confirmButton" ) ),
 		  
 		  
           // mSaveTestMapButton( smallFont, -300, 200, "Export Test Map" ),
 		  // mSaveTestMapButton( smallFont, 820, 260, "Export Test Map" ),
-		  mSaveTestMapButton( smallFont, (int)( viewWidth/2 * 0.75 ), mUndoButton.getPosition().y - 35, "Export Test Map" ),
+		  mSaveTestMapButton( smallFont, (int)( viewWidth/2 * 0.75 ), mUndoButton.getPosition().y - 35, translate( "saveTestMapButton" ) ),
 		  
 		  
           // mSaveNewButton( smallFont, -300, 260, "Save New" ),
 		  // mSaveNewButton( smallFont, 820 + 30, 300, "Save New" ),
-		  mSaveNewButton( smallFont, (int)( viewWidth/2 * 0.75 ) + 30, mUndoButton.getPosition().y, "Save New" ),
+		  mSaveNewButton( smallFont, (int)( viewWidth/2 * 0.75 ) + 30, mUndoButton.getPosition().y, translate( "saveNewButton" ) ),
 		  
 		  
 		  // mClearSceneButton( smallFont, 820 - 50, 300, "New" ),
-		  mClearSceneButton( smallFont, (int)( viewWidth/2 * 0.75 ) - 50, mUndoButton.getPosition().y, "New" ),
+		  mClearSceneButton( smallFont, (int)( viewWidth/2 * 0.75 ) - 50, mUndoButton.getPosition().y, translate( "clearSceneButton" ) ),
 		  
 
 		  // mReplaceButton( smallFont, -500, 260, "Replace" ),
 		  // mReplaceButton( smallFont, 820, 340, "Save" ),
-		  mReplaceButton( smallFont, (int)( viewWidth/2 * 0.75 ), mUndoButton.getPosition().y + 35, "Save" ),
-		  mConfirmReplaceButton( smallFont, mReplaceButton.getPosition().x, mReplaceButton.getPosition().y, "Confirm ?" ),
+		  mReplaceButton( smallFont, (int)( viewWidth/2 * 0.75 ), mUndoButton.getPosition().y + 35, translate( "replaceButton" ) ),
+		  mConfirmReplaceButton( smallFont, mReplaceButton.getPosition().x, mReplaceButton.getPosition().y, translate( "confirmButton" ) ),
           // mNextSceneButton( smallFont, -420, 260, ">" ),
           // mPrevSceneButton( smallFont, -580, 260, "<" ),
           mNextSceneButton( smallFont, mReplaceButton.getPosition().x + 60, mReplaceButton.getPosition().y, ">" ),
@@ -398,24 +398,24 @@ EditorScenePage::EditorScenePage()
     checkNextPrevVisible();
 
 
-    addKeyClassDescription( &mKeyLegend, "Ctrl + L - Click / Shft + WASD", "Move view" );
-	addKeyClassDescription( &mKeyLegend, "L - Click", "Add selected" );
-	addKeyClassDescription( &mKeyLegend, "None/Ctrl/Shft + R - Click", "Clear object/floor/both" );
+    addKeyClassDescription( &mKeyLegend, "Ctrl + L - Click / Shft + WASD", translate( "keyDescription_1" ) );
+	addKeyClassDescription( &mKeyLegend, "L - Click", translate( "keyDescription_2" ) );
+	addKeyClassDescription( &mKeyLegend, "None/Ctrl/Shft + R - Click", translate( "keyDescription_3" ) );
 	
-	addKeyDescription( &mKeyLegend, 'E', "Hide/show UI" );
-	addKeyClassDescription( &mKeyLegend, "Z/X", "Undo/redo" );
-	addKeyClassDescription( &mKeyLegend, "None/Shft/Ctrl + F", "Pick object/floor/biome" );
-	addKeyClassDescription( &mKeyLegend, "None/Shft + C", "Copy cell/area" );
-    addKeyClassDescription( &mKeyLegend, "None/Shft + V", "Paste cell/area" );
-	addKeyClassDescription( &mKeyLegend, "None/Shft + Q", "Clear cell/area" );
+	addKeyDescription( &mKeyLegend, 'E', translate( "keyDescription_4" ) );
+	addKeyClassDescription( &mKeyLegend, "Z/X", translate( "keyDescription_5" ) );
+	addKeyClassDescription( &mKeyLegend, "None/Shft/Ctrl + F", translate( "keyDescription_6" ) );
+	addKeyClassDescription( &mKeyLegend, "None/Shft + C", translate( "keyDescription_7" ) );
+    addKeyClassDescription( &mKeyLegend, "None/Shft + V", translate( "keyDescription_8" ) );
+	addKeyClassDescription( &mKeyLegend, "None/Shft + Q", translate( "keyDescription_9" ) );
     
-    addKeyClassDescription( &mKeyLegend, "Tab", "Focus/Unfocus search" );
-    addKeyClassDescription( &mKeyLegend, "Ctrl + W/S", "Change selection in search page" );
-    addKeyClassDescription( &mKeyLegend, "Ctrl + A/D", "Next/Prev search page" );
-    addKeyClassDescription( &mKeyLegend, "Ctrl + Tab", "Previous selected objects" );
+    addKeyClassDescription( &mKeyLegend, "Tab", translate( "keyDescription_10" ) );
+    addKeyClassDescription( &mKeyLegend, "Ctrl + W/S", translate( "keyDescription_11" ) );
+    addKeyClassDescription( &mKeyLegend, "Ctrl + A/D", translate( "keyDescription_12" ) );
+    addKeyClassDescription( &mKeyLegend, "Ctrl + Tab", translate( "keyDescription_13" ) );
 
-    addKeyClassDescription( &mKeyLegendG, "Shft + L - Click", "Flood fill" );
-    addKeyClassDescription( &mKeyLegendC, "Shft + L - Click", "Add to Container" );
+    addKeyClassDescription( &mKeyLegendG, "Shft + L - Click", translate( "keyDescription_14" ) );
+    addKeyClassDescription( &mKeyLegendC, "Shft + L - Click", translate( "keyDescription_15" ) );
     // addKeyClassDescription( &mKeyLegendP, "R-Click", "Add Clothing/Held" );
     // addKeyClassDescription( &mKeyLegendF, "R-Click", "Add Floor" );
     
