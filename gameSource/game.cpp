@@ -291,9 +291,6 @@ const char *getAppName() {
     return "OneLife";
     }
 
-int getAppVersion() {
-    return versionNumber;
-    }
 
 const char *getLinuxAppName() {
     // no dir-name conflict here because we're using all caps for app name
@@ -303,7 +300,7 @@ const char *getLinuxAppName() {
 
 
 const char *getFontTGAFileName() {
-    return "font_32_64.tga";
+    return "font_32_32.tga";
     }
     
 bool newFontExist() {
@@ -395,6 +392,11 @@ static void updateDataVersionNumber() {
         }
     }
 
+int getAppVersion() {
+    if(dataVersionNumber == 0)
+        updateDataVersionNumber();
+    return versionNumber;
+    }
 
 
 
@@ -479,7 +481,7 @@ void initDrawString( int inWidth, int inHeight ) {
         mainFont = new Font( getNewFontTGAFileName(), 3, 4, false, 16 );
         }
     else {
-        mainFont = new Font( "font_32_64.tga", 3, 6, false, 12 );
+        mainFont = new Font( "font_32_32.tga", 3, 6, false, 12 );
         }
     // mainFont = new Font( getFontTGAFileName(), 6, 16, false, 16 );
     mainFont->setMinimumPositionPrecision( 1 );
@@ -2188,7 +2190,7 @@ void drawFrame( char inUpdate ) {
 
                 startConnecting();
                 }
-            else if( autoUpdatePage->checkSignal( "relaunchFailed" ) ) {
+            else if( existingAccountPage->checkSignal( "relaunchFailed" ) ) {
                 currentGamePage = finalMessagePage;
                         
                 finalMessagePage->setMessageKey( "manualRestartMessage" );

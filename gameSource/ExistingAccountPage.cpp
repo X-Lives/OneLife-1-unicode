@@ -23,6 +23,8 @@
 #include "minorGems/graphics/openGL/KeyboardHandlerGL.h"
 
 #include "minorGems/util/random/JenkinsRandomSource.h"
+#include <sys/stat.h>
+#include <unistd.h>
 
 static JenkinsRandomSource randSource;
 

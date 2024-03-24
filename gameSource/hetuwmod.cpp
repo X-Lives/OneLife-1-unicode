@@ -1300,7 +1300,7 @@ void HetuwMod::initCustomFont() {
 	int fontSpaceWidth = 8; // vanilla main font is 16
 	char fontFixedWidth = false;
 	double fontScaleFactor = 16.0;
-	customFont = new HetuwFont("font_32_64.tga", fontCharSpacing, fontSpaceWidth, fontFixedWidth, fontScaleFactor);
+	customFont = new HetuwFont("font_32_32.tga", fontCharSpacing, fontSpaceWidth, fontFixedWidth, fontScaleFactor);
 	customFont->setMinimumPositionPrecision( 1 );
 }
 

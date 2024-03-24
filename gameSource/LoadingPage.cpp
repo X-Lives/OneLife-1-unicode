@@ -2,6 +2,7 @@
 
 #include "message.h"
 #include "minorGems/game/drawUtils.h"
+#include "minorGems/game/game.h"
 
 
 void LoadingPage::setCurrentPhase( const char *inPhaseName ) {
@@ -21,7 +22,7 @@ void LoadingPage::draw( doublePair inViewCenter,
 
     doublePair labelPos = { 0, 0 };
 
-    drawMessage( "LOADING", labelPos, false, 1.0, true );
+    drawMessage( translate( "loading" ), labelPos, false, 1.0, true );
 
     labelPos.y = -100;
     
