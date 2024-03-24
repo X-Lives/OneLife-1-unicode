@@ -67,6 +67,7 @@ emotion.cpp \
 
 GAME_GRAPHICS = \
 graphics/font_32_64.tga \
+graphics/font_32_32.tga \
 graphics/loading.tga \
 graphics/loading2.tga \
 graphics/loading3.tga \

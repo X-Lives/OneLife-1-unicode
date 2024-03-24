@@ -211,7 +211,7 @@ const char *getLinuxAppName() {
 
 
 const char *getFontTGAFileName() {
-    return "font_32_64.tga";
+    return "font_32_32.tga";
     }
 
 
