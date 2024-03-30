@@ -42,3 +42,11 @@ hetuw mod:
 
 I put all modifications i (hetuw) made in public domain.
 Everyone can do whatever they want with it, no need to ask for permission, no restrictions.
+
+----------------------------------------------------------
+
+hetuw-unicode mod:
+
+I put all modifications i (is52hertz) made in public domain.
+Everyone can do whatever they want with it, no need to ask for permission, no restrictions.
+
